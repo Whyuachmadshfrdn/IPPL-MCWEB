@@ -67,7 +67,7 @@
                       <select name="jadwal_psikolog">
                         <option selected disabled>Pilih Waktu</option>
                         @foreach ($jadwal as $janji)
-                        <option>{{$janji->hari}},{{$janji->jam}}</option>    
+                        <option>{{$janji->hari}},{{$janji->jam_mulai}},{{$janji->jam_mulai}}</option>    
                         @endforeach
                       </select>
                     </div>
