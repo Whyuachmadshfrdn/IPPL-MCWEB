@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\psikolog;
-use App\Models\jadwals;
+use App\Models\jadwal;
 use App\Models\kategori;
 
 class PsikologAdminController extends Controller
@@ -23,7 +23,7 @@ class PsikologAdminController extends Controller
         $ID=Auth::user()->id;
         $USER=User::where('id','=',$ID)->first();
         $PSIKOLOG=psikolog::where('id','=',$id)->first();
-        $Jadwal=jadwals::where('psikolog_id','=',$id)->get();
+        $Jadwal=jadwal::where('psikolog_id','=',$id)->get();
         return view ('admin.psikolog.psikolog-view',compact('USER','PSIKOLOG'),['Jadwal'=>$Jadwal]);
     }
 
